@@ -3,7 +3,7 @@ def search4vowels(word:str) -> set:
     vowers = set('аеиоуёяюэaeiouy')
     return vowers.intersection(set(word))
 
-def search4letters(phrase:str, letters:str) ->set:
+def search4letters(phrase:str, letters:str='аеиоуёяюэaeiouy') ->set:
     """Возвращает множество букв из 'letters', найденных
       в указанной фразе."""
     # set(letters) - создаёт обьект множества из letters.
