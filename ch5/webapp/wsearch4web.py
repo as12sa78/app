@@ -25,5 +25,5 @@ def do_search() -> str:
 def entry_page():
     return render_template('entry.html', the_title='Привет!')
         
-
-app.run(debug=True, host='0.0.0.0')
+if __name__ == '__main__':
+   app.run(debug=True, host='0.0.0.0')
