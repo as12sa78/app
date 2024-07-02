@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from vsearch import search4letters #Импорт написанного мною модуля
 
 app = Flask(__name__)
@@ -11,7 +11,9 @@ def hello() -> str:
 # с маршрутом('/search4')
 @app.route('/search4', methods=['POST'])
 def do_search() -> str:
-  return str(search4letters('life, the universe, and everything', 'eiru,!'))
+  phrase = request.form['phrase']
+  letters = request.form['letters']
+  return str(search4letters(phrase, letters))
  
 @app.route('/entry')
 def entry_page() -> 'html':
