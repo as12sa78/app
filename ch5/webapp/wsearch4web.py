@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from vsearch import search4letters #Импорт написанного мною модуля
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello() -> str:
-    return "Hello world from Flask!"
+    return redirect('/entry')
 
 # Добавить функцию представления для декоратора route 
 # с маршрутом('/search4')
@@ -13,10 +13,17 @@ def hello() -> str:
 def do_search() -> str:
   phrase = request.form['phrase']
   letters = request.form['letters']
-  return str(search4letters(phrase, letters))
+  title = 'Результаты поиска.'
+  results = str(search4letters(phrase, letters))
+  return render_template('result.html',
+                         the_title=title,
+                         the_phrase=phrase,
+                         the_letters=letters,
+                         the_results=results,)
+  
  
 @app.route('/entry')
-def entry_page() -> 'html':
+def entry_page():
     return render_template('entry.html', the_title='Привет!')
         
 
