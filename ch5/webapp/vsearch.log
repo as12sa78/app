@@ -1,0 +1,3 @@
+ImmutableMultiDict([('phrase', '12345'), ('letters', '2345')]) {'5', '2', '3', '4'}
+ImmutableMultiDict([('phrase', '23456'), ('letters', '3456')]) {'5', '4', '6', '3'}
+ImmutableMultiDict([('phrase', '6789'), ('letters', '123')]) set()
