@@ -10,8 +10,7 @@ def log_reqest(req: 'flask_reqest', res: str) -> None:
   with open('vsearch.log', 'a', encoding='utf-8') as log:# vsearch.log открывается как наполняемый и переменная log указывает на дискриптор этого файла.
   # endcoding='utf-8' обязателен
     
-    temp = str(dir(req))
-    print(temp, res, file=log) # Записывает значения переменных в файл.
+    print(req.form, req.remote_addr, req.user_agent, res,  file=log, sep='|') # Записывает значения переменных в файл.
 
 # Добавить функцию представления для декоратора route 
 # с маршрутом('/search4')
@@ -38,7 +37,7 @@ def entry_page():
 
 @app.route('/viewlog') # Добавим функциональность- просмотр истории запросов и ответов.
 def view_the_log() -> str:
-  with open('vsearch.log') as log:
+  with open('vsearch.log', encoding='utf-8') as log:
     contens = log.read()
   return escape(contens) # Убираю служебные знаки из строк.
 
