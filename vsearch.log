@@ -1,3 +1,3 @@
-ImmutableMultiDict([('phrase', '12345'), ('letters', '2345')]) {'3', '2', '4', '5'}
-ImmutableMultiDict([('phrase', '12345'), ('letters', '2345')]) {'3', '4', '5', '2'}
-ImmutableMultiDict([('phrase', 'galaxy'), ('letters', 'xyz')]) {'y', 'x'}
+ImmutableMultiDict([('phrase', 'привет'), ('letters', 'па')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 YaBrowser/24.4.0.0 Safari/537.36|{'п'}
+ImmutableMultiDict([('phrase', 'пока'), ('letters', 'па')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 YaBrowser/24.4.0.0 Safari/537.36|{'п', 'а'}
+ImmutableMultiDict([('phrase', 'покедово'), ('letters', 'па')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 YaBrowser/24.4.0.0 Safari/537.36|{'п'}
