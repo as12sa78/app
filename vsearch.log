@@ -1,3 +1,0 @@
-ImmutableMultiDict([('phrase', '12345'), ('letters', '2345')]) {'3', '2', '4', '5'}
-ImmutableMultiDict([('phrase', '12345'), ('letters', '2345')]) {'3', '4', '5', '2'}
-ImmutableMultiDict([('phrase', 'galaxy'), ('letters', 'xyz')]) {'y', 'x'}
