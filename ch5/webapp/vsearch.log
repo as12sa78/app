@@ -1,3 +1,2 @@
-ImmutableMultiDict([('phrase', '121354'), ('letters', '23')])|127.0.0.1|Mozilla/5.0 (Windows NT 6.3; Trident/7.0; Touch; rv:11.0) like Gecko|{'2', '3'}
-ImmutableMultiDict([('phrase', '4342'), ('letters', '34')])|127.0.0.1|Mozilla/5.0 (Windows NT 6.3; Trident/7.0; Touch; rv:11.0) like Gecko|{'3', '4'}
-ImmutableMultiDict([('phrase', '45647'), ('letters', '34')])|127.0.0.1|Mozilla/5.0 (Windows NT 6.3; Trident/7.0; Touch; rv:11.0) like Gecko|{'4'}
+ImmutableMultiDict([('phrase', 'asd'), ('letters', 'xyz')])|127.0.0.1|Mozilla/5.0 (Windows NT 6.3; rv:109.0) Gecko/20100101 Firefox/115.0|set()
+ImmutableMultiDict([('phrase', 'hitch-hiker'), ('letters', '')])|127.0.0.1|Mozilla/5.0 (Windows NT 6.3; rv:109.0) Gecko/20100101 Firefox/115.0|set()
