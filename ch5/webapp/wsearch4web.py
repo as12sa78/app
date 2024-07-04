@@ -9,8 +9,8 @@ def log_reqest(req: 'flask_reqest', res: str) -> None:
   # with управляет контекстом вызова файла vsearch.log
   with open('vsearch.log', 'a', encoding='utf-8') as log:# vsearch.log открывается как наполняемый и переменная log указывает на дискриптор этого файла.
   # endcoding='utf-8' обязателен
-    
-    print(req.form, req.remote_addr, req.user_agent, res,  file=log, sep='|') # Записывает значения переменных в файл.
+
+    print(req.form, req.remote_addr, req.user_agent, res, file=log, sep='|') # Записывает значения переменных в файл.
 
 # Добавить функцию представления для декоратора route 
 # с маршрутом('/search4')
