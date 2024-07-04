@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from vsearch import search4letters #Импорт написанного мною модуля
 from markupsafe import escape  # escape нужно импортировать из markupsafe, а не из flask
+import os
 
 app = Flask(__name__)
 
@@ -9,7 +10,6 @@ def log_reqest(req: 'flask_reqest', res: str) -> None:
   # with управляет контекстом вызова файла vsearch.log
   with open('vsearch.log', 'a', encoding='utf-8') as log:# vsearch.log открывается как наполняемый и переменная log указывает на дискриптор этого файла.
   # endcoding='utf-8' обязателен
-
     print(req.form, req.remote_addr, req.user_agent, res, file=log, sep='|') # Записывает значения переменных в файл.
 
 # Добавить функцию представления для декоратора route 
@@ -37,9 +37,15 @@ def entry_page():
 
 @app.route('/viewlog') # Добавим функциональность- просмотр истории запросов и ответов.
 def view_the_log() -> str:
+  contens = []
   with open('vsearch.log', encoding='utf-8') as log:
-    contens = log.read()
-  return escape(contens) # Убираю служебные знаки из строк.
+    for line in log:
+      contens.append([])
+      for item in line.split('|'):
+        contens[-1].append(escape(item))
+  return str(contensG) # Убираю служебные знаки из строк.
+  
+
 
 if __name__ == '__main__':
-   app.run(debug=True)
+   app.run(debug=True, host='0.0.0.0')
