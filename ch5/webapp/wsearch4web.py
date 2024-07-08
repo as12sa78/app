@@ -36,14 +36,18 @@ def entry_page():
     return render_template('entry.html', the_title='Привет!')
 
 @app.route('/viewlog') # Добавим функциональность- просмотр истории запросов и ответов.
-def view_the_log() -> str:
+def view_the_log() -> 'html':
   contens = []
   with open('vsearch.log', encoding='utf-8') as log:
     for line in log:
       contens.append([])
       for item in line.split('|'):
         contens[-1].append(escape(item))
-  return str(contensG) # Убираю служебные знаки из строк.
+  titles = ('Form Data', 'Remote_addr', 'User_agent', 'Results')
+  return render_template('viewlog.html',
+                         the_title='View Log',
+                         the_row_title=titles,
+                         the_data=contens,) # Убираю служебные знаки из строк.
   
 
 
